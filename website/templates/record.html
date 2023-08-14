@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-bg-light mb-3" style="max-width: 30rem;">
+    <div class="card-header">
+        <strong>Customer ID : {{ customer_record.id }}</strong>
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Name : </strong>{{ customer_record.first_name }} {{ customer_record.last_name }}
+        </p>
+        <p class="card-text">
+            <strong>Email : </strong>{{ customer_record.email }}
+        </p>
+        <p class="card-text">
+            <strong>Phone No. : </strong>{{ customer_record.phone }}
+        </p>
+        <p class="card-text">
+            <strong>Created At : </strong>{{ customer_record.created_at }}
+        </p>
+        <p class="card-text">
+            <strong>Town : </strong>{{ customer_record.town }}
+        </p>
+        <p class="card-text">
+            <strong>P.O. : </strong>{{ customer_record.po }}
+        </p>
+        <p class="card-text">
+            <strong>District : </strong>{{ customer_record.dist }}
+        </p>
+        <p class="card-text">
+            <strong>State : </strong>{{ customer_record.state }}
+        </p>
+        <p class="card-text">
+            <strong>PIN : </strong>{{ customer_record.pin }}
+        </p>
+        </p>
+    </div>
+</div>
+
+<a href="{% url 'home' %}" class="btn btn-outline-primary">Back</a>
+
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-outline-danger">Delete</a>
+
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-outline-warning">Update</a>
+
+
+{% endblock %}
